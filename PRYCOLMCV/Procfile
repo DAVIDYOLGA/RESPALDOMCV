@@ -1,0 +1,1 @@
+web: gunicorn PRYCOLMCV.wsgi --log-file -
