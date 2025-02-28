@@ -1,0 +1,42 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <div class="titmenu">
+        <H1>ACTIVIDADES</H1>
+    </div>
+
+    <!-- presentacion de actividades -->
+    <div class="card-container">
+
+        {% for actividad in actividades|slice:12 %}
+
+            <!--   <div class="profile-card">    -->
+           
+            <div class="cardactividad">    
+
+                <div class="imageact">
+                    <a href="{{actividad.archivo.url}}" target="_blank">
+                    <img src="{{actividad.imagen.url}}" alt="" class="profile-img"> </a>
+                </div>
+                <div class="text-data">
+                    <span class="name">{{actividad.titulo}}</span>
+                </div>
+                <div class="text-data">
+                    <span class="job">Fecha:{{actividad.fechaact}}</span>
+                </div>
+                <div class="text-data">
+                    <span class="job">{{actividad.contenido}}</span>
+                </div>
+                <div class="analytics">
+                    <div class="data">
+                        <i class="bx bx-heart"></i>
+                        <span class="number">{{actividad.grupo}}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>    
+   
+{% endblock %}

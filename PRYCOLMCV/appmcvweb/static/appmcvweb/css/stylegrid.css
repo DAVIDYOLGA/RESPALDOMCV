@@ -1,0 +1,32 @@
+.grid-container>* {
+    box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+    /* grid-template-columns: [main] 7fr [sidebar] 2fr; */
+    grid-template-columns: [main] 10fr ;
+}
+.sidebar {
+    padding-top: 10px;
+    grid-area: sidebar;
+    background-color: #c1dcf6;
+    height: auto;
+    margin-right: 10px;
+}
+.sidebar a{
+    font-size: 15px;
+    font-weight: 700;
+}
+.sidebar img:hover{
+   transform: scale(1.1);
+}
+
+
+.main {
+    grid-area: main;
+    background-color: #c1dcf6;
+    margin-left: 20px;
+
+}

@@ -1,0 +1,39 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="titmenu">
+    <H1>PRESENTACION INSTITUCIONAL</H1>
+</div>
+
+<!-- 
+<div id="paginadetalle">
+<div class="container">
+<div class="row">
+ -->
+
+<div class="card-container">
+
+    {% for presentacion in presentaciones|slice:12 %}
+  
+        <!--     <div class="cardinst" style="width:20%; margin: 20px 10px; border:1">     -->
+        <div class="cardinst">
+
+            <div id="contenidotitinsti">
+                <h6 class="card-titleact">  <center> {{presentacion.titulo}} </center> </h6>
+            </div>
+           <div id="contenidoinsti">
+                <a href="{{presentacion.archivo.url}}" target="_blank" >
+                <img src="{{presentacion.imagen.url}}" width="250px" height="150px"  class="card-img-top"> </a>
+           </div>
+        </div>
+      
+    {% endfor %}
+
+</div>
+
+<div>
+
+
+{% endblock %}

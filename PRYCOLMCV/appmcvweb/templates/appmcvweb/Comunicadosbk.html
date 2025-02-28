@@ -1,0 +1,27 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="titmenu">
+    <H1>COMUNICADOS</H1>
+</div>
+<br>
+<table>
+    <tbody>
+    {% for comunicado in comunicados|slice:12 %}
+        <tr>
+            <td>{{comunicado.titulo}}</td>
+            <td>{{comunicado.fechaact}}</td>
+            <td>{{comunicado.grupo}}</td>
+            <td>
+                <a href="{{comunicado.archivo.url}}" target="_blank">
+                <img src="{% static 'appmcvweb/img/comunicadosazul.jpg' %}" width="30" height="30"> </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

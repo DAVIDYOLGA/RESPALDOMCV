@@ -1,0 +1,25 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <br>
+    <div class="titmenu">
+         <H1>APLICACIONES</H1>
+    </div>
+
+    <!--         <div class="card-container">                -->
+
+    <div CLASS="aplicontenedor">   
+        {% for aplicacion in aplicaciones|slice:12 %}
+            <div class="aplitit">
+                <h6>{{aplicacion.titulo}}</h6>
+                <a href="{{aplicacion.enlace}}" target="_blank" >
+                <img src="{{aplicacion.imagen.url}}" width="400" height="200px"  class="card-img-top">  </a>                                   >                      </a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+{% endblock %}

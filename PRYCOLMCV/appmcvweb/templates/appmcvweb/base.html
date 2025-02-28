@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      {% load static %}
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>COL MANUEL CEPEDA VARGAS I.E.D.</title>
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/header.css' %}" >
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/media.css' %}" >
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/inicio.css' %}" >
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/stylegrid.css' %}" >
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/slider.css' %}">
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/footer.css' %}">
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/actividades.css' %}">
+      <link rel="stylesheet" href="{% static 'appmcvweb/css/publicaciones.css' %}">
+
+      <script defer src="{% static 'appmcvweb/js/app.js '%}"></script>
+
+      <!-- Boxicons CSS -->
+      <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
+   </head>
+
+   <body>
+      <header class="header">
+         <!--   logos de la institucion   -->
+         <div class="logo">
+            <img src="{% static 'appmcvweb/img/logomcv.png' %}"  alt="logo de la institucion">
+            <img src="{% static 'appmcvweb/img/logomcvtexto.png' %}"  alt="logo nombre de la institucion">
+         </div>
+         <!--  Menu de la aplicacion -->
+         <button class="open-menu" aria-label="Abrir menú">
+               <img src="{% static 'appmcvweb/img/hamburger-icon.svg'%}" alt="abrir menú" />
+         </button>
+
+         <nav class="nav">
+            <button class="close-menu" aria-label="Cerrar menú">
+                <img src="{% static 'appmcvweb/img/close-icon.svg'%}" alt="cerrar menú" />
+            </button>
+               <a href="{% url 'Inicio'%}">
+                  <img src="{% static 'appmcvweb/img/bienvenidazul.png' %}" alt=""  width="90px" height="60px"> </a>
+
+               <a href="{% url 'Comunicados'%}">
+                  <img src="{% static 'appmcvweb/img/comunicadosazul.jpg' %}" alt=""  width="90x" height="60px"> </a>  
+
+               <a href="{% url 'Institucional'%}">
+                        <img src="{% static 'appmcvweb/img/institucionalesazul.png' %}" alt=""  width="90px" height="60px"> </a>  
+
+               <a href="{% url 'Actividades'%}">
+                  <img src="{% static 'appmcvweb/img/actividadesazul.png' %}" alt="" width="90px" height="60px"> </a>
+
+               <a href="{% url 'Publicaciones'%}">
+                  <img src="{% static 'appmcvweb/img/publicacionesazul.png' %}" alt="" width="90px" height="60px"> </a>
+
+               <a href="{% url 'Aplicaciones'%}">
+                  <img src="{% static 'appmcvweb/img/aplicacionesazul.png' %}" alt=""  width="90px" height="60px"> </a>
+         </nav>
+      </header>
+
+
+
+      <!-- contenido variable en cada pagina -->
+      {% block content %}
+      {% endblock %}
+
+
+
+      <!-- pie de pagina -->
+
+      <footer class="pienav">
+         
+         <div>
+         <a href="#" class="pielogo">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7953.751521120862!2d-74.17747104990534!3d4.616242663358868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9e648a961d11%3A0x1a63a32183bd1d16!2sColegio%20Distrital%20Manuel%20Cepeda%20Vargas!5e0!3m2!1ses!2sco!4v1658012071184!5m2!1ses!2sco"
+               width="220" height="150" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1658013202921!6m8!1m7!1sKpu0WUXOr1qToCDkE2nZTw!2m2!1d4.616495133282001!2d-74.17796070949065!3f63.75775034659525!4f1.4432178775175402!5f0.4000000000000002"
+               width="220" height="150" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </a>
+         </div>
+
+         <div class="pielogotype">
+            <h3>COLEGIO MANUEL CEPEDA VARGAS IED</h3>
+            <p>SEDE 1 BRITALIA: Cl. 56 # 81-26 sur, Bogotá <br>
+            Horario de atención: 8:00 am - 5:00 pm <br>
+            Teléfono Conmutador: 7820397 <br>
+            Correo institucional: cedbritalia8@educacionbogota.edu.co<br>
+            Notificaciones judiciales: cedbritalia8@educacionbogota.edu.co </p>
+            <p> SEDE 2 GRAN BRITALIA: Calle 47A sur # 82D-99 <br>
+            Tel. 4 52 70 21 </p>
+            <p>SEDE 3  CAMILO TORRES: Cra 83 # 46B-16 sur<br>
+            Tel. 4 52 13 27 </p>
+         </div>
+         <div class="piemenu">
+            <!-- Navigation links redes sociales -->
+
+            <div class="media-buttons">
+               <br>
+               <a href="https://www.facebook.com/Colegio-Manuel-Cepeda-Vargas-2062118614074677/" style="background: #4267b2" class="link">
+                  <i class="bx bxl-facebook"></i>
+               </a>
+               <a href="https://twitter.com/ManuelCepedaVa1" style="background: #1da1f2" class="link">
+                  <i class="bx bxl-twitter"></i>
+               </a>
+               <a href="#" style="background: #e1306c" class="link">
+                  <i class="bx bxl-instagram"></i>
+               </a>
+               <a href="https://www.youtube.com/channel/UChrQJTSpGaHQ3hBzDQXER4Q" style="background: #ff0000" class="link">
+                  <i class="bx bxl-youtube"></i>
+               </a>
+
+
+               <br>
+               <br>
+               <a href="#" class="link">Política de privacidad</a>
+               <br>
+               <a href="#" class="link">Aviso legal</a>
+		       <br>
+               <br>
+               <p>&copy; Solisis 2025</p>
+            </div>
+         </div>
+
+
+      </footer>
+
+   </body>
+</html>

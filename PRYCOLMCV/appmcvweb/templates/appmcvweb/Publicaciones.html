@@ -1,0 +1,33 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<body style="background-image:url('{% static 'appmcvweb/img/bg_main.jpg'%}');background-repeat:no-repeat;background-size: 100%;">
+
+    <br>
+    <div class="titmenu">
+         <H1>PUBLICACIONES</H1>
+    </div>
+
+
+
+<div class="card-container">
+    {% for publicacion in publicaciones|slice:12 %}
+    <div class="card">
+
+        <a href="{{publicacion.archivo.url}}" target="_blank">
+           <img src="{{publicacion.imagen.url}}"> </a>
+        <div class="card-content">
+            <h3>{{publicacion.titulo}}</h3>
+            <p>{{publicacion.contenido}}</p>
+            <h5>{{publicacion.grupo}}</h5>
+            <h5>AUTOR:{{publicacion.autor}}</h5>
+            <h7>{{publicacion.updated}}</h7>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

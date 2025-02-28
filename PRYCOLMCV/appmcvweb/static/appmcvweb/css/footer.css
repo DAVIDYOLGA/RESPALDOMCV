@@ -1,0 +1,82 @@
+.pienav {
+   box-shadow: 0 4px 5px var(#6a6a6a);
+   background-color: #c1dcf6;
+   width: auto;
+
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 10px;
+   margin-right: 10px;
+
+   /*
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   */
+
+   /* display: flex; 
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: [pielogo] 2fr [pielogotype] 2fr  [piemenu] 1fr  ;
+
+    padding: 10px; */
+
+
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+  
+
+
+}
+
+.pielogo {
+   display: flex;
+   /* align-items: center; */
+   padding: 20px;
+}
+
+/* Menu */
+.piemenu {
+   display: flex;
+   list-style: none;
+   text-align: center;
+}
+.piemenu li {
+   padding: 0 10px;
+}
+
+.piemenu a {
+   font-size: 12px;
+   font-weight: 700;
+   line-height: 25px;
+   text-transform: uppercase;
+   position: relative;
+   padding: 10px;
+
+}
+.pielogotype {
+   /*  display: flex;  */
+   display: inline;
+   text-align: center;
+   padding: 10px;
+}
+.pielogotype p {
+   font-size: 15px;
+}
+
+.media-buttons .link {
+  display: inline;
+  align-items: center;
+  justify-content: center;
+   color: #fff;
+
+  height: 35px;
+  width: 35px;
+
+  border-radius: 50%;
+  margin: 0 8px;
+
+  text-decoration: none;
+}

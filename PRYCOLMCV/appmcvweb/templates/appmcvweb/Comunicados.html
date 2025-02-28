@@ -1,0 +1,36 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<body style="background-image:url('{% static 'appmcvweb/img/bg_main.jpg'%}');background-repeat:no-repeat;background-size: 100%;">
+
+
+
+<br>
+<div class="titmenu">
+    <H1>COMUNICADOS</H1>
+</div>
+<br>
+
+<div class="card-container">
+
+    
+    {% for comunicado in comunicados|slice:12 %}
+    <div class="cardcomunicado">
+        <div class="card-content">
+            <h3>{{comunicado.titulo}}</h3>    
+            <h5>{{comunicado.grupo}}</h5>
+            <h7>{{comunicado.fechaact}}</h7>
+        </div>   
+            <a href="{{comunicado.archivo.url}}" target="_blank">
+            <img src="{% static 'appmcvweb/img/verarchivo.png' %}" width="50" height="50"> </a>
+
+
+
+    </div>       
+    {% endfor %}
+</div>
+
+
+{% endblock %}

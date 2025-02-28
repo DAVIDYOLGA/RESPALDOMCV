@@ -1,0 +1,88 @@
+{% extends "appmcvweb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!--   <body style="background-image:url('{% static 'appmcvweb/img/FONDOBANNER.jpg'%}');background-repeat:no-repeat;background-size: 100%;">   -->
+
+
+<br>
+<div class="titmenu">
+    <H1>BIENVENIDA</H1>
+</div>
+
+<div class="grid-container">
+   <article class="main">
+
+      <!--   Tarjetas presenta items menu de bienvenida archivo inicios   -->
+    
+      <div class="slider-frame">
+
+         <ul>
+             <li> <img src="{% static 'appmcvweb/slider/colegio1.jpg' %}" width="50" height="400" class="card-img-top"> </li>
+             <li> <img src="{% static 'appmcvweb/slider/colegio11.jpg' %}" width="50" height="400" class="card-img-top"> </li>
+             <li> <img src="{% static 'appmcvweb/slider/colegio12.jpg' %}" width="50" height="400" class="card-img-top"> </li>
+             <li> <img src="{% static 'appmcvweb/slider/colegio4.jpg' %}" width="50" height="400" class="card-img-top"> </li>
+
+         </ul>
+      </div>
+
+      {% for inicio in inicios|slice:12 %}
+         <div class="card">
+            <div class="contenido-card">
+               {% if inicio.tipo == "MP4" %}
+                  <video class="video" controls="controls">
+                     <source src="{{inicio.archivo.url}}" type="video/mp4"  />
+                  </video>
+               {% endif %}
+    		   {% if inicio.tipo == "JPG" %}
+ 				  <img class="imagen" src="{{inicio.archivo.url}}" >
+               {% endif %}
+			   {% if inicio.tipo == "PDF" %}
+			      <br>
+			      <br>
+                  <a href="{{inicio.archivo.url}}" target="_blank">
+                  <img class="documento" src="{% static 'appmcvweb/img/recibocorreos.jpg' %}"> </a>
+               {% endif %}
+               <h3>{{inicio.titulo}}</h3>
+	           <h5>{{inicio.contenido}}</h5>
+               {% if inicio.enlace %}
+                  <a href="{{inicio.enlace}}" target="_blank"> VER </a>
+               {% endif %}
+               <p>{{inicio.grupo}} ---  {{inicio.updated}}        </p>
+            </div>
+         </div>
+      {% endfor %}
+   </article>
+
+<!--   comentados provisionalmente
+
+   <aside class="sidebar">
+
+         <div class="slider-frame">
+            <ul>
+                <li> <img src="{% static 'appcolmcv/slider/colegio1.jpg' %}" width="50" height="200" class="card-img-top"> </li>
+                <li> <img src="{% static 'appcolmcv/slider/colegio11.jpg' %}" width="50" height="200" class="card-img-top"> </li>
+                <li> <img src="{% static 'appcolmcv/slider/colegio12.jpg' %}" width="50" height="200" class="card-img-top"> </li>
+                <li> <img src="{% static 'appcolmcv/slider/colegio4.jpg' %}" width="50" height="200" class="card-img-top"> </li>
+
+            </ul>
+         </div>
+
+          {% for presentacion in presentaciones %}
+             <div>
+               <a>{{presentacion.titulo}}</a>
+             </div>
+             <div>
+                <a href="{{presentacion.archivo.url}}" target="_blank" >
+                   <img src="{{presentacion.imagen.url}}" width="100px" height="60px"> </a>
+             </div>
+          {% endfor %}
+
+   </aside>
+ -->
+
+</div>
+
+
+{% endblock %}
